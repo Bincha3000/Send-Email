@@ -25,7 +25,7 @@ SECRET_KEY = '-@21arpo_x16k&=0xeodnirq-oce0*(or70qa=yql6#c5q!m_j'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -78,8 +78,11 @@ WSGI_APPLICATION = 'app.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'HOST': os.environ.get('DB_HOST'),
+        'NAME': os.environ.get('DB_NAME'),
+        'USER': os.environ.get('DB_USER'),
+        'PASSWORD': os.environ.get('DB_PASS'),
     }
 }
 
@@ -128,14 +131,15 @@ STATIC_URL = '/static/'
 
 
 # Email settings
+# Измени текст набранный КАПСОМ чтобы заработало
 
-ADMINS = [('Vlad', 'bincha.1997@gmail.com')]
+ADMINS = [('NAME', 'EMAIL')]
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'bincha.1997@gmail.com'
-EMAIL_HOST_PASSWORD = 'Parolyanikaknet12'
-DEFAULT_FROM_EMAIL = 'vladislav'
+EMAIL_HOST_USER = 'GMAIL'
+EMAIL_HOST_PASSWORD = 'GMAILPASSWORD'
+DEFAULT_FROM_EMAIL = 'you name'
 DEFAULT_TO_EMAIL = 'test@sneakers.com'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 

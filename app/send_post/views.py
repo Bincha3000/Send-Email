@@ -1,11 +1,7 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 from django.utils import timezone
-import django
-from django.conf import settings
 from django.core.mail import mail_admins
 from django.views.generic import TemplateView
-from .models import Post
 from .forms import PostForm
 
 
@@ -17,7 +13,11 @@ class PaperView(TemplateView):
         if form.is_valid():
             if request.user.is_authenticated:
                 theme = form.cleaned_data['title']
-                message = "Сообщение для Администратора от: " + request.user.email + '\n Текст сообщения: ' + form.cleaned_data['text']
+                message = ("Сообщение для Администратора от: " +
+                           request.user.email +
+                           '\n Текст сообщения: ' +
+                           form.cleaned_data['text']
+                           )
                 post = form.save(commit=False)
                 post.status = True
                 post.author = request.user
