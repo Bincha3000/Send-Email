@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form method="POST" class="registration-form">
+    {% csrf_token %}
+    <h1>Войти в свою учетную запись</h1>
+    <label for="username">Логин:</label>
+        {{ form.username }}
+    <label for="password">Пароль:</label>
+        {{ form.password }}
+        <button class="btn btn-form" type="submit">Вход</button>
+</form>
+
+<small class="text-muted">
+    У вас нет аккаунта? <a href="{% url 'register' %}">Регистрация</a>
+</small>
+{% endblock %}

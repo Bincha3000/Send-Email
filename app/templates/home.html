@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="page-home">
+        {% if user.is_authenticated %}
+        <p class="base-text">Выходите или отправляйте письмо администратору, решать вам</p> 
+        <div>
+            <a href="{% url 'logout' %}" class="top-menu"><button class="btn top-button">Выход</button></a>
+            <a href="{% url 'send_post' %}" class="top-menu"><button class="btn top-button">Send post</button></a>
+        </div>
+        {% else %}
+        <p class="base-text">Добро пожаловать на сайт для отправки сообщения администратору этого сайта, зачем делать для этого сайт?
+        Я не знаю если честно... Для начала нужно войти, или зарегесрироваться, да уж, СЕРВИС..</p>
+        <div>
+            <a href="{% url 'register' %}" class="top-menu"><button class="btn top-button">Регистрация</button></a>
+            <a href="{% url 'login' %}" class="top-menu"><button class="btn top-button">Вход</button></a>
+        </div>
+        {% endif %}
+</div>
+{% endblock %}

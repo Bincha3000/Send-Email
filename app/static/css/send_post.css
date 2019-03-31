@@ -1,0 +1,63 @@
+/*GLOBAL*/
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    font-family: 'Oswald', sans-serif;
+}
+
+.page-home {
+    display: flex;
+    margin-left: 30px;
+    margin-right: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.btn{
+    color: #190B21;
+    background: #fff;
+    border: 1px solid #210c52;
+    font-size: 15px;
+    padding: 7px 12px;
+    font-weight: 800;
+    margin: 7px 0;
+    margin-right: 12px;
+    display: inline-block;
+    text-decoration: none;
+    font-family: 'Oswald', sans-serif;
+    min-width: 120px;
+}
+
+.btn:hover, .btn:active {
+  color:#fff;
+  background:#501474;
+}
+
+.btn-form{
+    width: 100%;
+}
+
+.registration-form {
+    font-family: 'Oswald', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.text-muted {
+    margin-left: 10px;
+}
+
+.create-post{
+    margin-left: 70px;
+    margin-right: 250px;
+    flex-direction: column;
+    display: flex;
+
+}

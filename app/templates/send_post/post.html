@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form method="POST" class="create-post">{% csrf_token %}
+    <h1 class="new-post">Сообщение администратору</h1>
+    <p>
+        Напишите то, что так давно хотели сказать, но помните, 
+        администраторы народ ранимый, поаккуратнее с ними..
+    </p>
+    <label for="post" class="title-post">Theme:</label>
+    {{ form.title }}
+    <label for="text" class="title-text">Text:</label>
+    {{ form.text }}
+    <button type="submit" class="btn btn-form">Save</button>
+</form>
+{% endblock %}
