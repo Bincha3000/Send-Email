@@ -133,12 +133,12 @@ STATIC_URL = '/static/'
 # Email settings
 # Измени текст набранный КАПСОМ чтобы заработало
 
-ADMINS = [('vladislav', 'bincha.1997@gmial.com')]
+ADMINS = [('NAME', 'GMAIL')]
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'bincha.1997@gmail.com'
-EMAIL_HOST_PASSWORD = 'Parolyanikaknet12'
+EMAIL_HOST_USER = 'GMAIL'
+EMAIL_HOST_PASSWORD = 'PASSWORD'
 DEFAULT_FROM_EMAIL = 'you name'
 DEFAULT_TO_EMAIL = 'test@sneakers.com'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
