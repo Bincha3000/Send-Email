@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.utils import timezone
 from django.core.mail import mail_admins
 from django.views.generic import TemplateView
@@ -24,8 +24,13 @@ class PaperView(TemplateView):
                 post.published_date = timezone.now()
                 mail_admins(subject=theme, message=message)
                 post.save()
+                return redirect('success')
             else:
                 return render(request, 'home.html', {'form': form})
         else:
             form = PostForm()
         return render(request, self.template_name, {'form': form})
+
+
+class SuccessView(TemplateView):
+    template_name = 'send_post/success.html'
